@@ -6,8 +6,14 @@
  * @param {Object} item The OrderItem so far. Potentially mutates this to add additional properties.
  * @returns {undefined}
  */
-export default function mutateNewOrderItemBeforeCreateForVariantName(context, { chosenProduct, chosenVariant, item }) {
-  item.variantTitle = chosenVariant.title || chosenVariant.optionTitle || chosenVariant.attributeLabel;
+export default function mutateNewOrderItemBeforeCreateForVariantName(
+  context,
+  { chosenProduct, chosenVariant, item }
+) {
+  item.variantTitle =
+    chosenVariant.title ||
+    chosenVariant.optionTitle ||
+    chosenVariant.attributeLabel;
   if (
     (chosenVariant.primaryImage && chosenVariant.primaryImage.URLs) ||
     (chosenProduct.primaryImage && chosenProduct.primaryImage.URLs)
@@ -15,5 +21,5 @@ export default function mutateNewOrderItemBeforeCreateForVariantName(context, { 
     item.imageURLs =
       chosenVariant.primaryImage && chosenVariant.primaryImage.URLs
         ? chosenVariant.primaryImage.URLs
-        : chosenProduct.primaryImage.URLs;
+        : (chosenProduct.primaryImage || {}).URLs || {};
 }
