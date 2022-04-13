@@ -81,7 +81,7 @@ export default async function catalogProducts(_, args, context, info) {
     connectionArgs.sortBy = realSortByField;
   }
 
-  const saaf = await context.queries.catalogProducts(context, {
+  const query = await context.queries.catalogProducts(context, {
     catalogBooleanFilters,
     shopIds,
     tagSlugs,
@@ -89,7 +89,6 @@ export default async function catalogProducts(_, args, context, info) {
     tagMatchs,
     excludeProductIds
   });
-  const query = await saaf.run();
 
   return getPaginatedResponse(query, connectionArgs, {
     includeHasNextPage: wasFieldRequested("pageInfo.hasNextPage", info),

@@ -1,7 +1,7 @@
 {
   "name": "@idigi/reaction-plugin-products-extend",
   "description": "Extend api-plugin-products API",
-  "version": "0.0.5",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
   "engines": {
@@ -82,8 +82,5 @@
     "branches": [
       "trunk"
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
