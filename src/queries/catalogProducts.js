@@ -1,6 +1,4 @@
 import ReactionError from "@reactioncommerce/reaction-error";
-import Saaf from "@idigi/saaf";
-
 /**
  * @name catalogProducts
  * @method
@@ -23,9 +21,12 @@ export default async function catalogProducts(context, input = {}) {
     excludeProductIds = [],
     tagMatchs = false,
   } = input;
-  ///  -- INIT : SAAF -- \\\
+  ///  -- INIT  -- \\\
   if ((!shopIds || shopIds.length === 0) && (!tagIds || tagIds.length === 0)) {
-    throw new ReactionError("invalid-param", "You must provide tagIds or shopIds or both");
+    throw new ReactionError(
+      "invalid-param",
+      "You must provide tagIds or shopIds or both"
+    );
   }
   // tags
   if (tagSlugs.length || tagIds.length) {
@@ -34,13 +35,14 @@ export default async function catalogProducts(context, input = {}) {
     if (tagSlugs.length) queries.push({ slug: { $in: tagSlugs } });
     if (tagIds.length) queries.push({ _id: { $in: tagIds } });
     ///  -- QUERY -- \\\
-    const tags = await Tags.find(queries.length == 1 ? queries[0] : { $or: queries }, {
-      projection: { _id: 1 },
-    }).toArray();
-    ///  -- SAVE: VAR -- \\\
-    saaf.resultsSet({
-      tagIds: tags.map(({ _id }) => _id),
-    });
+    const tags = await Tags.find(
+      queries.length == 1 ? queries[0] : { $or: queries },
+      {
+        projection: { _id: 1 },
+      }
+    ).toArray();
+    // tagIds
+    tagIds = tags.map(({ _id }) => _id);
   }
   // query
   const query = {
@@ -50,7 +52,8 @@ export default async function catalogProducts(context, input = {}) {
   };
 
   if (shopIds) query.shopId = { $in: shopIds };
-  if (excludeProductIds && excludeProductIds.length) query["product.productId"] = { $nin: excludeProductIds };
+  if (excludeProductIds && excludeProductIds.length)
+    query["product.productId"] = { $nin: excludeProductIds };
   if (tagIds) {
     if (tagMatchs) {
       query["product.tagIds"] = { $all: tagIds };
