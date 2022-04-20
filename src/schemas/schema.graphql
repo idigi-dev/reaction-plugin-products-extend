@@ -55,3 +55,53 @@ extend type Query {
     sortBy: CatalogItemSortByField = updatedAt
   ): CatalogItemConnection
 }
+extend type Product  {
+  langs: [String]
+}
+extend input ProductInput  {
+  langs: [String]
+}
+extend type ProductVariant {
+  isMultiple: Boolean
+  minOption: Int
+  maxOption: Int
+  langs: [String]
+}
+extend input ProductVariantInput {
+  isMultiple: Boolean
+  minOption: Int
+  maxOption: Int
+  langs: [String]
+}
+extend type CatalogProduct {
+  langs: [String]
+}
+extend type CatalogProductVariant {
+  isMultiple: Boolean
+  minOption: Int
+  maxOption: Int
+  langs: [String]
+}
+extend type ProductPricingInfo {
+  maxFreeQty: Int
+  maxQty: Int
+  minQty: Int
+  langs: [String]
+}
+extend type CurrencyExchangeProductPricingInfo {
+  maxFreeQty: Int
+  maxQty: Int
+  minQty: Int
+}
+extend input ProductVariantPricesInput {
+  maxFreeQty: Int
+  maxQty: Int
+  minQty: Int
+  langs: [String]
+}
+extend type ProductVariant {
+  "maxFreeQty of the variant"
+  maxFreeQty: Float @deprecated(reason: "Use `pricing`")
+  maxQty: Int
+  minQty: Int
+}

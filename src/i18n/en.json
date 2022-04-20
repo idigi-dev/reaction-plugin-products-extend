@@ -1,0 +1,17 @@
+[{
+  "i18n": "en",
+  "ns": "productsx",
+  "translation": {
+    "productsx": {
+      "productVariant": {
+        "maxFreeQty": "Max free quantity",
+        "maxQty": "quantity must be greater than or equal",
+        "minQty": "quantity must be less than or equal"
+      },
+      "productDetailEdit": {
+        "langsHelpText": "Langs",
+        "langs": "Langs"
+      }
+    }
+  }
+}]

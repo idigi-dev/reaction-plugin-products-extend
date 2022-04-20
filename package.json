@@ -1,18 +1,18 @@
 {
-  "name": "@idigi/reaction-plugin-products-extend",
+  "name": "@idigi/reaction-plugin-productsx",
   "description": "Extend api-plugin-products API",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "engines": {
     "node": ">=12.14.1"
   },
-  "homepage": "https://github.com/idigi-dev/reaction-plugin-products-extend",
-  "url": "https://github.com/idigi-dev/reaction-plugin-products-extend",
+  "homepage": "https://github.com/idigi-dev/reaction-plugin-productsx",
+  "url": "https://github.com/idigi-dev/reaction-plugin-productsx",
   "email": "engineering@idigi.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idigi-dev/reaction-plugin-products-extend.git"
+    "url": "git+https://github.com/idigi-dev/reaction-plugin-productsx.git"
   },
   "author": {
     "name": "iDigi.dev",
@@ -21,7 +21,7 @@
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/idigi-dev/reaction-plugin-products-extend/issues"
+    "url": "https://github.com/idigi-dev/reaction-plugin-productsx/issues"
   },
   "sideEffects": false,
   "dependencies": {

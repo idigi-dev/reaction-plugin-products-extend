@@ -16,6 +16,8 @@ export default async function catalogProducts(context, input = {}) {
   const {
     shopIds,
     tagIds = [],
+    langs,
+    langsMatchs = false,
     catalogBooleanFilters,
     tagSlugs = [],
     excludeProductIds = [],
@@ -59,6 +61,13 @@ export default async function catalogProducts(context, input = {}) {
       query["product.tagIds"] = { $all: tagIds };
     } else {
       query["product.tagIds"] = { $in: tagIds };
+    }
+  }
+  if (langs) {
+    if (langsMatchs) {
+      query["product.langs"] = { $all: langs };
+    } else {
+      query["product.langs"] = { $in: langs };
     }
   }
   //

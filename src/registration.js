@@ -7,5 +7,5 @@ export const customPublishedProductVariantFields = [];
  * @returns {undefined}
  */
 export function registerPluginHandlerForExtendProduct({ catalog }) {
-  if (catalog) (catalog.publishedProductFields || []).push("specification");
+  if (catalog) (catalog.publishedProductFields || []).push(...["specification", "langs"]);
 }

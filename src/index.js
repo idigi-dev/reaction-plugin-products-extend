@@ -1,5 +1,6 @@
 /* eslint camelcase: 0 */
 import pkg from "../package.json";
+import i18n from "./i18n/index.js";
 import schemas from "./schemas/index.js";
 import queries from "./queries/index.js";
 import resolvers from "./resolvers/index.js";
@@ -16,8 +17,9 @@ import mutateNewOrderItemBeforeCreate from "./utils/mutateNewOrderItemBeforeCrea
  */
 export default async function register(app) {
   await app.registerPlugin({
-    label: "extend products",
-    name: "extend-plugin-products",
+    label: "productsx",
+    name: "Productsx",
+    i18n,
     version: pkg.version,
     graphQL: {
       schemas,
