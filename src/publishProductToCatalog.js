@@ -4,7 +4,7 @@
  * @param {Object} input Input data
  * @returns {undefined}
  */
-export default async function publishProductToCatalog(
+export default async function productxPublishProductToCatalog(
   catalogProduct,
   { context, product, variants }
 ) {

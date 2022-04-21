@@ -17,8 +17,8 @@ import mutateNewOrderItemBeforeCreate from "./utils/mutateNewOrderItemBeforeCrea
  */
 export default async function register(app) {
   await app.registerPlugin({
-    label: "productsx",
-    name: "Productsx",
+    label: "Productx",
+    name: "productx",
     i18n,
     version: pkg.version,
     graphQL: {

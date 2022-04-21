@@ -1,5 +1,5 @@
 {
-  "name": "@idigi/reaction-plugin-productsx",
+  "name": "@idigi/reaction-plugin-productx",
   "description": "Extend api-plugin-products API",
   "version": "1.0.0",
   "main": "index.js",
@@ -7,12 +7,12 @@
   "engines": {
     "node": ">=12.14.1"
   },
-  "homepage": "https://github.com/idigi-dev/reaction-plugin-productsx",
-  "url": "https://github.com/idigi-dev/reaction-plugin-productsx",
+  "homepage": "https://github.com/idigi-dev/reaction-plugin-productx",
+  "url": "https://github.com/idigi-dev/reaction-plugin-productx",
   "email": "engineering@idigi.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idigi-dev/reaction-plugin-productsx.git"
+    "url": "git+https://github.com/idigi-dev/reaction-plugin-productx.git"
   },
   "author": {
     "name": "iDigi.dev",
@@ -21,7 +21,7 @@
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/idigi-dev/reaction-plugin-productsx/issues"
+    "url": "https://github.com/idigi-dev/reaction-plugin-productx/issues"
   },
   "sideEffects": false,
   "dependencies": {

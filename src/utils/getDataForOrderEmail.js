@@ -36,7 +36,7 @@ function formatDateForEmail(date) {
  * @param {Object} input.order - The order document
  * @returns {Object} Data object to use when rendering email templates
  */
-export default async function getDataForOrderEmailDefault(context, { order }) {
+export default async function productxGetDataForOrderEmailDefault(context, { order }) {
   const { collections, getAbsoluteUrl } = context;
   const { Accounts, Shops } = collections;
 
