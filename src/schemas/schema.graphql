@@ -55,10 +55,10 @@ extend type Query {
     sortBy: CatalogItemSortByField = updatedAt
   ): CatalogItemConnection
 }
-extend type Product  {
+extend type Product {
   langs: [String]
 }
-extend input ProductInput  {
+extend input ProductInput {
   langs: [String]
 }
 extend type ProductVariant {
@@ -75,12 +75,14 @@ extend input ProductVariantInput {
 }
 extend type CatalogProduct {
   langs: [String]
+  pId: ID
 }
 extend type CatalogProductVariant {
   isMultiple: Boolean
   minOption: Int
   maxOption: Int
   langs: [String]
+  vId: ID
 }
 extend type ProductPricingInfo {
   maxFreeQty: Int
